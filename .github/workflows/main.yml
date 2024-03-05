@@ -36,21 +36,21 @@ jobs:
               host: ${{ secrets.HOST }}
               username: ${{ secrets.USERNAME }}
               password: ${{ secrets.PASSWORD }}
-              port: 
+              port: ${{ secrets.PORT }}
               script: |
                 eval "$(ssh-agent -s)"
-                ssh-add ~/.ssh/vm_senpro_modul2_47
+                ssh-add ~/.ssh/vm_senpro_modul2_46
                 echo "Cek Folder Project";
-                [ ! -d "${HOME}/senpro/473264/modul02/senpro-github-action/" ] &&
+                [ ! -d "${HOME}/senpro/479269/modul02/senpro-github-action/" ] &&
                 {
                   echo "Repository belum di-clone. Cloning...";
-                  mkdir -p ~/senpro/473264/modul02;
-                  cd ~/senpro/473264/modul02;
-                  git clone git@github.com:mailbau/senpro-github-action.git;
+                  mkdir -p ~/senpro/479269/modul02;
+                  cd ~/senpro/479269/modul02;
+                  git clone git@github.com:AntoDaiva/senpro-github-action.git;
                 } ||
                 {
                   echo "Repository sudah ada. Building...";
-                  cd ~/senpro/473264/modul02/senpro-github-action;
+                  cd ~/senpro/479269/modul02/senpro-github-action;
                   git restore .;
                   git pull origin main;
                 }
